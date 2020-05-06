@@ -1,0 +1,849 @@
+.body{
+    font-family: "Open Sans","PingFang SC","Microsoft YaHei","Helvetica Neue","Hiragino Sans GB","WenQuanYi Micro Hei",Arial,sans-serif;
+}
+html{
+    height: 100%;
+}
+.headerOpen{
+    overflow: hidden;
+    height: 100%;
+}
+a,
+a:hover{
+    text-decoration: none;
+}
+.clearfix::before,.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+/* ============================头部 start========================== */
+.site-header.header-closed{
+    height: 100%;
+    pointer-events: none;
+}
+.site-header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 9999;
+}
+.site-header .navbar-container{
+    height: 68px;
+    transition: all .5s ease 0s;
+}
+.site-header .navbar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 50px;
+    padding: 0 17px;
+    border-bottom: 1px solid transparent;
+    text-align: center;
+    float: none;
+    pointer-events: auto;
+    transition: all .6s;
+}
+.navbar-control{
+    display: inline-block;
+    width: 22px;
+    height: 24px;
+    transition: all .5s ease;
+}
+.navbar-control .control-icon{
+    display: block;
+    padding: 3px 0;
+    transition: all .4s ease;
+}
+.navbar-control .control-icon::before{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 22px;
+    background-color: #fff;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    transition: transform .4s ease .2s,background-color .5s ease;
+}
+.site-logo>a{
+    display: block;
+    width: 45px;
+    height: 26px;
+    background-size: 45px 26px;
+    background-position: center center;
+    background-image: url(./DJI-Img/site-header/logo-white-5d7bb59954f3b2279536a04907b6afb5.png);
+    transition: all .6s;
+}
+.navbar-shopingbag{
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    transition: all .5s ease;
+}
+.navbar-shopingbag .shopingbag-icon{
+    position: relative;
+    display: block;
+    opacity: 1;
+    width: 22px;
+    height: 22px;
+    background-size: 22px 22px;
+    background-position: center center;
+    background-image: url(./DJI-Img/site-header/shoppingbag-icon-white-a61433458771508d3b00143584001219.png);
+}
+.navbar-shopingbag::after,
+.navbar-shopingbag::before{
+    position: absolute;
+    content: "";
+    display: block;
+    opacity: 0;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 22px;
+    background-color: #303233;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.navbar-shopingbag::after{
+    transform: rotate(-45deg);
+}
+.navbar-shopingbag::before{
+    transform: rotate(45deg);
+}
+.navbar-content{
+    position: absolute;
+    top: 51px;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all .6s;
+    background-color: #fff;
+}
+.slide{
+    transform: translateX(-100%);
+}
+.init{
+    left: 0;
+}
+.navbar-content .category-list{
+    opacity: 0;
+    pointer-events: none;
+    transition: all .6s;
+}
+.navbar-content .category-list .category-item .category{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 20px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #303233;
+}
+.navbar-content .category-list .category-item .category::before{
+    position: absolute;
+    content: "";
+    left: 20px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #f2f2f2;
+}
+.navbar-content .category-list .category-item-menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    top: 0;
+    left: 100%;
+    transition: all .4s;
+}
+.controlBtn{
+    display: block;
+    padding: 22px 20px;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #ebeff2;
+}
+.controlBtn i{
+    font-size: 18px;
+    color: rgb(194,200,204);
+    margin-right: 5px;
+}
+.shopping-content .controlBtn i{
+    color: #303233;
+    margin-left: 5px;
+}
+.navbar-content .category-list .category-item-menu .category::before{
+    position: absolute;
+    content: "";
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    height: 1px;
+    background-color: #f2f2f2;
+} 
+.shopping-content{
+    position: absolute;
+    top: 51px;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all .6s;
+    background-color: #fff;
+    pointer-events: none;
+}
+.shopping-content .user-login{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 22px 20px;
+}
+.shopping-content .user-login span{
+    display: inline-block;
+    margin-right: 25px;
+    width: 32px;
+    height: 32px;
+    background-image: url(./DJI-Img/site-header/user-mobile-256430d1fcc907913e25db1fc399e07c.png);
+    background-position: center center;
+    border-radius: 50%;
+    background-size: 32px 32px;
+}
+.shopping-content .user-login a{
+    font-size: 16px;
+    font-weight: 600;
+    color: #1897f2;
+}
+/* ——————————————————————————————header激活 start—————————————————————————————— */
+.header-opened .navbar-header{
+    background-color: #fff;
+    border-bottom: 1px solid #f2f2f2;
+}
+.header-opened .control-icon::before{
+    background-color: #303233;
+}
+.header-opened .control-icon:nth-child(1)::before{
+    transform: rotate(45deg);
+}
+.header-opened .control-icon:nth-child(3)::before{
+    transform: rotate(-45deg);
+}
+.header-opened .control-icon:nth-child(1){
+    transform:  translateY(8px) ;
+}
+.header-opened .control-icon:nth-child(2){
+    transition: none;
+    opacity: 0;
+}
+.header-opened .control-icon:nth-child(3){
+    transform:  translateY(-8px) ;
+}
+.header-opened .site-logo>a{
+    background-image: url(./DJI-Img/site-header/logo-black-5069d1009cdf1d5f70ef519b57886731.png);
+}
+.header-opened .navbar-shopingbag{
+    transform: translateY(-50px);
+}
+.header-opened .navbar-content{
+    height: 100%;
+    opacity: 1;
+    background-color: #fff;
+}
+.header-opened .navbar-content .category-list{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.shopping-opened .navbar-header{
+    background-color: #fff;
+}
+.shopping-opened .site-logo>a{
+    background-image: url(./DJI-Img/site-header/logo-black-5069d1009cdf1d5f70ef519b57886731.png);
+}
+.shopping-opened .shopping-content{
+    height: 100%;
+    opacity: 1;
+    background-color: #fff;
+    pointer-events: auto;
+}
+.shopping-opened .navbar-shopingbag::before,
+.shopping-opened .navbar-shopingbag::after{
+    opacity: 1;
+    transition: opacity .4s .4s;
+    z-index: 1;
+}
+.shopping-opened .navbar-control{
+    transform: translateY(-50px);
+}
+
+.sticky-nav .navbar-container{
+    height: 50px;
+    background-color: #fff;
+}
+.sticky-nav .site-logo>a{
+    background-image: url(./DJI-Img/site-header/logo-black-5069d1009cdf1d5f70ef519b57886731.png);
+}
+.sticky-nav .navbar-control .control-icon::before{
+    background-color: black;
+}
+.sticky-nav .navbar-shopingbag .shopingbag-icon{
+    background-image: url(./DJI-Img/site-header/shoppingbag-icon-5b1dd9eed597726228f8adb09293ff82.png);
+}
+/* ——————————————————————————————header激活 end—————————————————————————————— */
+
+/* =============================头部 end============================ */
+
+
+
+/* ==============================banner start======================== */
+.homepage-banner{
+    width: 100%;
+    height: 578px;
+}
+.banner-container{
+    height: 100%;
+    position: relative;
+}
+.banner{
+    height: 100%;
+}
+.banner-container .banner-item{
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 578px;
+    background-position: center center;
+    background-size: cover;
+    transition: all .2s;
+}
+.banner-text{
+    text-align: center;
+}
+.banner-text>img{
+    display: block;
+    margin: 116px auto 0;
+    height: 22px;
+}
+.banner-text p{
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #fff;
+}
+.banner-product{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 360px;
+    background-position: bottom center;
+    background-size: auto 360px;
+    background-repeat: no-repeat;
+}
+.banner-container .banner-item:nth-child(1){
+    background-image: url("//www4.djicdn.com/cms_uploads/banner_mobile_background/img/1154/4b4515996abf9fe7cb94ad51d247831a.jpg");
+} 
+.banner-container .banner-item:nth-child(2){
+    opacity: 0;
+    background-image: url("https://www1.djicdn.com/cms/uploads/2159b0f153aa1136bb8462dbc3b0bf00.png");
+} 
+.banner-container .banner-item:nth-child(3){
+    opacity: 0;
+    background-image: url("https://www1.djicdn.com/cms/uploads/2f1cc38a6d9f83f981084947ecfff398.jpg");
+} 
+.banner-container .banner-item:nth-child(1) .banner-product{
+    background-image: url(./DJI-Img/banner/616325719f4a5dede83992ce4fd98f8d.png);
+}
+.banner-container .banner-item:nth-child(2) .banner-product{
+    background-image: url(./DJI-Img/banner/4bfaa2713f91d5456f816654d65ee282.png);
+}
+.banner-point{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+}
+.banner-point>li{
+    height: 2px;
+    width: 30px;
+    margin: 0 5px;
+    background-color: #9fa0a0;
+}
+.banner-point .pointActive{
+    background-color: #707477;
+}
+/* ===============================banner end======================== */
+
+
+
+/* ===============================grids start======================== */
+.homepage-grids{
+    width: 100%;
+    background-color: #f3f3f3;
+}
+.grids-item{
+    position: relative;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.grids-item h3{
+    margin-top: 45px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #303233;
+}
+.grids-item>p{
+    font-size: 16px;
+    color: #303233;
+}
+.grids-item .product-text{
+    margin: 45px 0 15px;
+    height: 24px;
+}
+.grids-item .product-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 52px;
+    width: 100%;
+    height: 288px;
+}
+.grids-item .product-img img{
+    bottom: 0;
+    width: auto;
+    height: 100%;
+}
+.grids-item:nth-child(1){
+    height: 480px;
+    background-image: url("https://www1.djicdn.com/cms/uploads/86a2e43055e90c01d713753dcc79ce0e.jpg");
+}
+.grids-item:nth-child(2){
+    height: 448px;
+}
+.grids-item:nth-child(3){
+    position: relative;
+    overflow: hidden;
+    height: 480px;
+    background-color: #008c8c;
+}
+
+/* ———————————————————————————grids轮播 start—————————————————————————— */
+.text-modular{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 48px 24px 0;
+    text-align: center;
+    height: 432px;
+    pointer-events: none;
+}
+.equipment{
+    line-height: 32px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+}
+.equipment-list{
+    position: relative;
+    overflow: hidden;
+    height: 35px;
+    width: 100%;
+    transition: all .5s;
+}
+.equipment-list>li{
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    line-height: 35px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: all .5s;
+}
+.photographer-list{
+    position:relative;
+    height: 20px;
+    width: 100%;
+    margin-top: 250px;
+}
+.photographer-list>li{
+    font-size: 14px;
+    color: rgba(255,255,255,.45);
+    opacity: 0;
+    line-height: 20px;
+    width: 100%;
+    position: absolute;
+    transition: opacity .3s;
+}
+.photographer-list .photographer-active{
+    opacity: 1;
+}
+.learnMore{
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    top: 0;
+    opacity: 0;
+    animation: move .5s forwards;
+    /* transition: all .5s; */
+}
+.learnMore i{
+    font-size: 20px;
+    margin-left: 10px;
+}
+@keyframes move{
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes move1{
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes move2{
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.img-modular{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    transition: all .2s;
+}
+.img-item{
+    height: 100%;
+    min-width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.img-1{
+    background-image: url(./DJI-Img/grids/569a50dc1a1bf669b020cbb9df3758c9.png);
+}
+.img-2{
+    background-image: url(./DJI-Img/grids/fd93725e5b84eb30d479307f6d935e43.png);
+}
+.img-3{
+    background-image: url(./DJI-Img/grids/27800ab1b6d3fd67ad01f9adc4f87efc.png);
+}
+.grids-point{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 15px;
+    width: 100%;
+    height: 30px;
+}
+.grids-point>li{
+    position: relative;
+    margin-right: 10px;
+    width: 16px;
+    height: 2px;
+    border-radius: 60px;
+    background-color: rgba(255,255,255,.3);
+}
+.grids-point>li::before{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.grids-point .point-active::before{
+    transition: all 4s;
+    width: 16px;
+}
+.text-modular .equipment-item-active{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.text-modular .equipment-item-next{
+    opacity: 0;
+    transform: translateY(35px);
+}
+.text-modular .equipment-item-prev{
+    opacity: 0;
+    transform: translateY(-35px);
+}
+/* ———————————————————————————grids轮播 end—————————————————————————— */
+
+.grids-item:nth-child(4){
+    display: flex;
+    padding: 0 4px 7px 4px;
+    width: auto;
+    background-color: #f3f3f3;
+}
+.gird-cell{
+    position: relative;
+}
+.gird-cell a{
+    display: inline-block;
+    height: 210px;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.gird-cell:nth-child(1){
+    display: inline-block;
+    width: 50%;
+    padding: 0 4px;
+}
+.gird-cell:nth-child(1)>a{
+    background-image: url(./DJI-Img/grids/32124d0cef2454bc689804860b8040ac.png);
+}
+.gird-cell:nth-child(2){
+    display: inline-block;
+    width: 50%;
+    padding: 0 4px;
+}
+.gird-cell:nth-child(2)>a{
+    background-image: url(./DJI-Img/grids/e5f1d24ecdaff0f4427d972d9c9dfd9d.png);
+}
+.cell-text{
+    position: absolute;
+    text-align: start;
+    bottom: 30px;
+    left: 15px;
+}
+.cell-text p{
+    display: inline-block;
+    font-size: 14px;
+}
+.cell-text i{
+    font-size: 12px;
+}
+/* ===============================grids end======================== */
+
+
+
+/* ===================footer start=================== */
+footer{
+    background-color: #272727;
+}
+.backTop{
+    display: block;
+    padding: 14px 20px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #c9c4c4;
+    border-bottom:solid 1px rgba(73,75,77,.5);
+    text-align: center;
+}
+.backTop i{
+    margin-left: 5px;
+}
+.footer-category{
+    font-size: 12px;
+}
+.footer-category>li{
+    position: relative;
+}
+.footer-category>li::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    width: auto;
+    background-color: #494b4d;
+    opacity: .5;
+}
+.footer-category li>a{
+    display: block;
+    padding: 18px 20px;
+    line-height: 20px;
+    color: #ebeff2;
+}
+.footer-category li>a>span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    float: right;
+    width: 8px;
+    height: 8px;
+}
+.footer-category li>a>span::before,
+.footer-category li>a>span::after{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 1px;
+    background-color: #ebeff2;
+    transition: all .5s;
+}
+.footer-category li>a>span::after{
+    transform: rotate(-90deg);
+}
+.footer-category-content{
+    height: 0;
+    overflow: hidden;
+    padding: 0px 30px 0 30px;
+    background-color:#494b4d;
+    transition: height .5s;
+}
+.footer-category-content>ul>li:first-child{
+    margin-top: 20px;
+}
+.footer-category-content>ul>li>a{
+    display: block;
+    line-height: 20px;
+    padding: 8px 0;
+    color: #909699;
+}
+.footer-category .footer-category-active>a>span::after{
+    transform: rotate(0deg);
+}
+.info-container{
+    padding: 0px 20px 30px;
+    font-size: 12px;
+    color: #ebeff2;
+}
+.subscribe{
+    padding-top: 22px;
+}
+.subscribe>p{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.subscribe>p:nth-child(2){
+    color: #909699;
+}
+.subscribe-input{
+    position: relative;
+    padding-right: 40px;
+}
+.subscribe-input input{
+    display: block;
+    width: 100%;
+    padding: 10px 8px;
+    font-size: 12px;
+    line-height: 20px;
+    color:#606466 ;
+    background-color: transparent;
+    outline: none;
+    border: solid 1px #494b4d;
+    border-right: none;
+    margin: 0;
+    box-sizing: border-box;
+}
+.subscribe-input a{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: #494b4d;
+}
+.subscribe-input i{
+    font-size: 22px;
+    color: #919699;
+}
+.footer-info .tip{
+    margin: 5px 0;
+    color: #606466;
+}
+.social-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 28px;
+    padding: 8px 0 10px 0;
+}
+.social-list li{
+    margin-right: 20px;
+}
+.social-list img{
+    height: 18px;
+}
+.feedback{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: #1897f2;
+}
+.copyright{
+    padding-top: 12px;
+    color: #606466;
+}
+.legal{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    color: #8f9699;
+}
+.legal li{
+    position: relative;
+    line-height: 17px;
+    padding-right: 20px;
+}
+.legal li:nth-child(1)::before,
+.legal li:nth-child(2)::before{
+    position: absolute;
+    content: "";
+    left: 86%;
+    width: 1px;
+    height: 12px;
+    margin-top: 2px;
+    background-color: #8f9699;
+}
+.record{
+    margin-top: 8px;
+    color: #606466;
+}
+.ad-desc{
+    color: #606466;
+}
+/* ===================footer end=================== */
